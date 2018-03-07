@@ -46,4 +46,4 @@ class AppDashboardController extends CI_Controller {
 }
 
 /* End of file AppDashboardController.php */
-/* Location: ./application/controllers/app/dashboard/AppDashboardController.php */
+/* Location: ./application/controllers/app/parse/AppDashboardController.php */

@@ -9,4 +9,4 @@ class AppDashboardModel extends CI_Model {
 }
 
 /* End of file AppDashboardModel.php */
-/* Location: ./application/models/app/dashboard/AppDashboardModel.php */
+/* Location: ./application/models/app/parse/AppDashboardModel.php */
