@@ -21,7 +21,7 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="https://www.petinsurance.com/images/dog-bone.png" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <span class="hidden-xs"><?= ucwords($this->session->userdata("fname")." ".$this->session->userdata("lname")) ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -36,7 +36,7 @@
 
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                                <a href="profile" class="btn btn-default btn-flat">Perfil</a>
                             </div>
                             <div class="pull-right">
                                 <a href="shutdown/session" class="btn btn-default btn-flat">Cerrar Sesión</a>

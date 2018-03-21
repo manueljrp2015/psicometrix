@@ -73,24 +73,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-$db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'reclutamiento.clzuxzcwxlmk.us-east-1.rds.amazonaws.com',
-	'username' => 'Reclutamiento',
-	'password' => 'Reclutamiento',
-	'database' => 'test_psicometrix',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => 'psmtx_',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
+$db['default'] = [
+    'dsn' => '',
+    'hostname' => 'localhost',
+    'username' => 'psicometrix',
+    'password' => 'psico2018',
+    'database' => 'test_psicometrix',
+    'dbdriver' => 'mysqli',
+    'dbprefix' => 'psmtx_',
+    'pconnect' => TRUE,
+    'db_debug' => (ENVIRONMENT !== 'production'),
+    'cache_on' => FALSE,
+    'cachedir' => '',
+    'char_set' => 'utf8',
+    'dbcollat' => 'utf8_general_ci',
+    'swap_pre' => '',
+    'encrypt' => FALSE,
+    'compress' => FALSE,
+    'stricton' => FALSE,
+    'failover' => [],
+    'save_queries' => TRUE,
+];
+
+/*$db['aws'] = array(
+    'dsn'	=> '',
+    'hostname' => 'reclutamiento.clzuxzcwxlmk.us-east-1.rds.amazonaws.com',
+    'username' => 'Reclutamiento',
+    'password' => 'Reclutamiento',
+    'database' => 'test_psicometrix',
+    'dbdriver' => 'mysqli',
+    'dbprefix' => 'psmtx_',
+    'pconnect' => FALSE,
+    'db_debug' => (ENVIRONMENT !== 'production'),
+    'cache_on' => FALSE,
+    'cachedir' => '',
+    'char_set' => 'utf8',
+    'dbcollat' => 'utf8_general_ci',
+    'swap_pre' => '',
+    'encrypt' => FALSE,
+    'compress' => FALSE,
+    'stricton' => FALSE,
+    'failover' => array(),
+    'save_queries' => TRUE
+);*/

@@ -58,13 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array(
-  "database",
-  "email",
-  "session",
-  "user_agent",
-  "form_validation"
-);
+$autoload['libraries'] = array("database", "email", "session", "user_agent", "form_validation");
 
 /*
 | -------------------------------------------------------------------
@@ -95,17 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array(
-  "url",
-  "form",
-  "html",
-  "cookie",
-  "security",
-  "file",
-  "language",
-  "string",
-  "text"
-);
+$autoload['helper'] = array("url", "form", "html", "cookie", "security", "file", "language", "string", "text");
 
 /*
 | -------------------------------------------------------------------
@@ -149,6 +133,6 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array(
-"app/functions/appFunctionsModel",
-"app/oauth/appOauthModel"
-);
+    "app/functions/appFunctionsModel",
+    "app/oauth/appOauthModel",
+    "app/catalogs/AppCatalogsModel");

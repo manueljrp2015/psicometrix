@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     localStorage.removeItem("id");
     localStorage.removeItem("firtsname");
@@ -25,25 +25,25 @@ $(document).ready(function() {
                 required: "<span class='badge badge-danger'>Requerido</span>"
             }
         },
-        submitHandler: function() {
+        submitHandler: function () {
             oauth();
         }
     });
 
-    oauth = function() {
+    oauth = function () {
         $.ajax({
-                url: 'oauth-autorized',
-                type: 'POST',
-                dataType: 'json',
-                data: {
-                    _email: base64_encode($("#_email").val()),
-                    _key: base64_encode($("#_key").val())
-                },
-                beforeSend: function() {
-                    $("#loader").empty().append(loaderCustom(50, ""));
-                }
-            })
-            .done(function(response) {
+            url: 'oauth-autorized',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                _email: base64_encode($("#_email").val()),
+                _key: base64_encode($("#_key").val())
+            },
+            beforeSend: function () {
+                $("#loader").empty().append(loaderCustom(50, ""));
+            }
+        })
+            .done(function (response) {
                 $("#loader").empty();
                 if (response.data == false) {
                     swal("Acceso Restringido!", "Los datos suministrados no son validos", "error");
@@ -56,22 +56,23 @@ $(document).ready(function() {
                             localStorage.setItem("firtsname", response.data.session.fname);
                             localStorage.setItem("lastname", response.data.session.lname);
                             localStorage.setItem("email", response.data.session.email);
-                            window.location.href = "juguemos";
-                        } else {}
+                            window.location.href = "wall";
+                        } else {
+                        }
                     } else {
-                        window.location.href = "juguemos";
+                        window.location.href = "wall";
                     }
                 }
             })
-            .fail(function() {
+            .fail(function () {
                 console.log("error");
             })
-            .always(function() {
+            .always(function () {
                 console.log("complete");
             });
     };
 
-    $("#panel").click(function(event) {
+    $("#panel").click(function (event) {
         event.preventDefault();
         swal({
             title: "Acceso a Panel!",
@@ -81,7 +82,7 @@ $(document).ready(function() {
             closeOnConfirm: false,
             animation: "slide-from-top",
             inputPlaceholder: "Llave de acceso"
-        }, function(inputValue) {
+        }, function (inputValue) {
             if (inputValue === false) return false;
 
             if (inputValue === "") {
@@ -90,14 +91,14 @@ $(document).ready(function() {
             }
 
             $.ajax({
-                    url: 'access-panel-key',
-                    type: 'POST',
-                    dataType: 'json',
-                    data: {
-                        _key: base64_encode(inputValue)
-                    },
-                })
-                .done(function(data) {
+                url: 'access-panel-key',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    _key: base64_encode(inputValue)
+                },
+            })
+                .done(function (data) {
                     console.log(data)
                     if (data.data == "badpass") {
                         swal("error!", "Llave incorrecta", "error");
@@ -106,14 +107,12 @@ $(document).ready(function() {
                         window.location.href = "access-panel";
                     }
                 })
-                .fail(function() {
+                .fail(function () {
                     console.log("error");
                 })
-                .always(function() {
+                .always(function () {
                     console.log("complete");
                 });
-
-
 
 
         });

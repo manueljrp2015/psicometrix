@@ -59,7 +59,7 @@ $route['validate-mail']        = "/app/validations/appValidationsController/vali
 $route['oauth-autorized']      = "/app/oauth/appOauthController/oauthAutorized";
 $route['recuperar-clave']      = "/app/recovery/appRecoveryController";
 $route['recovery-pass']        = "/app/recovery/appRecoveryController/recoverPassword";
-$route['juguemos']             = "/app/dashboard/appDashboardController";
+$route['wall']                 = "/app/dashboard/appDashboardController";
 $route['shutdown/session']     = '/app/oauth/appOauthController/destroySession';
 
 $route['save-interests']       = '/app/dashboard/appDashboardController/putInterest';
@@ -68,3 +68,5 @@ $route['access-panel']         = '/app/panel/AppPanelController';
 $route['access-panel-key']     = '/app/panel/AppPanelController/oauthAutorized';
 $route['save-inter']           = '/app/panel/AppPanelController/putRegister';
 $route['delete-inter']         = '/app/panel/AppPanelController/deleteInterests';
+
+$route['profile']              = '/app/profile/AppProfileController';
